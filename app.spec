@@ -29,16 +29,7 @@ hiddenimports.extend([
     'vnpy_datamanager',
 ])
 
-# 收集 PySide6 资源
-pyside6_data = []
-try:
-    # PyInstaller 6.x 返回 (src_path, dst_path) 2元组，需要转换为 (dest_name, src_name, 'DATA') 3元组
-    for src, dst in collect_data_files('PySide6'):
-        pyside6_data.append((dst, src, 'DATA'))
-    for src, dst in collect_data_files('shiboken6'):
-        pyside6_data.append((dst, src, 'DATA'))
-except:
-    pass
+# PySide6 资源由 PyInstaller hooks 自动处理
 
 # 入口脚本
 entry_script = 'examples/veighna_trader/run.py'
@@ -77,7 +68,6 @@ exe_args = [
     a.zipfiles,
     a.datas,
 ]
-exe_args.extend(pyside6_data)
 
 exe = EXE(
     *exe_args,

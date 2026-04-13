@@ -32,12 +32,11 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller examples/veighna_trader/app.spec --clean --noconfirm
-        dir examples/veighna_trader/dist
+        pyinstaller app.spec --clean --noconfirm
+        dir dist
 
     - name: Create ZIP
       if: success()
-      working-directory: examples/veighna_trader
       shell: pwsh
       run: |
         $items = Get-ChildItem -Path dist -Directory
@@ -52,14 +51,14 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: AIQuantSoftware-EXE
-        path: examples/veighna_trader/dist/*.zip
+        path: dist/*.zip
         retention-days: 30
 
     - name: Create Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/master' && success()
       uses: softprops/action-gh-release@v2
       with:
-        files: examples/veighna_trader/dist/*.zip
+        files: dist/*.zip
         tag_name: v${{ github.run_number }}
         body: |
           ## AI量化软件 Windows EXE

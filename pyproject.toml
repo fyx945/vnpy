@@ -86,6 +86,7 @@ path = "vnpy/trader/locale/build_hook.py"
 [tool.ruff]
 target-version = "py310"
 output-format = "full"
+exclude = ["miaoxiang"]
 
 [tool.ruff.lint]
 select = [

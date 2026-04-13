@@ -10,12 +10,11 @@ env:
 
 permissions:
   contents: write
-  releases: write
 
 jobs:
   build-exe:
     runs-on: windows-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4

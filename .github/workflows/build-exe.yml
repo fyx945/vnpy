@@ -31,12 +31,14 @@ jobs:
         pip install vnpy vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
 
     - name: Build EXE
+      working-directory: examples/veighna_trader
       run: |
         pyinstaller app.spec --clean --noconfirm
         dir dist
 
     - name: Create ZIP
       if: success()
+      working-directory: examples/veighna_trader
       shell: pwsh
       run: |
         $items = Get-ChildItem -Path dist -Directory
@@ -51,14 +53,14 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: AIQuantSoftware-EXE
-        path: dist/*.zip
+        path: examples/veighna_trader/dist/*.zip
         retention-days: 30
 
     - name: Create Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/master' && success()
       uses: softprops/action-gh-release@v2
       with:
-        files: dist/*.zip
+        files: examples/veighna_trader/dist/*.zip
         tag_name: v${{ github.run_number }}
         body: |
           ## AI量化软件 Windows EXE

@@ -1,26 +1,26 @@
 @ECHO OFF
 ECHO ========================================
-ECHO AI量化软件 PyInstaller 打包脚本
+ECHO AI量化软件 PyInstaller Build Script
 ECHO ========================================
 ECHO.
 
-:: 检查 PyInstaller 是否安装
+:: Check PyInstaller
 python -c "import PyInstaller" 2>/dev/null
 IF ERRORLEVEL 1 (
-    ECHO PyInstaller 未安装，正在安装...
+    ECHO PyInstaller not installed, installing...
     pip install pyinstaller
 )
 
 ECHO.
-ECHO 开始打包...
+ECHO Building...
 ECHO.
 
-:: 打包
+:: Build with PyInstaller
 pyinstaller app.spec --clean
 
 ECHO.
 ECHO ========================================
-ECHO 打包完成！
-ECHO 输出目录: dist\AI量化软件
+ECHO Build Complete!
+ECHO Output: dist\AIQuantSoftware
 ECHO ========================================
 PAUSE

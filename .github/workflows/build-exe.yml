@@ -40,26 +40,28 @@ jobs:
         pyinstaller app.spec --clean --noconfirm
 
     - name: Create ZIP archive
-      shell: pwsh
+      shell: bash
       run: |
-        Compress-Archive -Path "dist\AI量化软件" -DestinationPath "dist\AI量化软件-v${{ github.run_number }}.zip" -Force
+        cd dist
+        zip -r "AIQuantSoftware-${{ github.run_number }}.zip" "AIQuantSoftware"
 
     - name: Upload EXE artifact
       uses: actions/upload-artifact@v4
       with:
-        name: AI量化软件-EXE
+        name: AIQuantSoftware-EXE-${{ github.run_number }}
         path: dist/*.zip
         retention-days: 30
 
     - name: Create Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         files: dist/*.zip
+        tag_name: v${{ github.run_number }}
         body: |
           ## AI量化软件 Windows EXE
 
-          自动构建版本 #{{ github.run_number }}
+          自动构建版本 #${{ github.run_number }}
 
           ### 包含模块
           - vnpy 核心

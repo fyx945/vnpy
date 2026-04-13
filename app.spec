@@ -29,9 +29,12 @@ for mod in [
     hiddenimports.extend(collect_submodules(mod))
 
 # 收集 PySide6 资源
-from PyInstaller.utils.hooks import collect_all
-pyside6_data = collect_data_files('PySide6')
-pyside6_data.extend(collect_data_files('shiboken6'))
+try:
+    from PyInstaller.utils.hooks import collect_all
+    pyside6_data = collect_data_files('PySide6')
+    pyside6_data.extend(collect_data_files('shiboken6'))
+except:
+    pyside6_data = []
 
 a = Analysis(
     ['examples/veighna_trader/run.py'],
@@ -66,18 +69,18 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     *pyside6_data,
-    name='AI量化软件',
+    name='AIQuantSoftware',  # 使用ASCII名称避免Windows编码问题
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=False,  # GUI程序，设为True会显示黑窗口
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,  # 可设置: icon='app.ico'
+    icon=None,
 )

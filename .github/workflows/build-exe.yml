@@ -5,6 +5,9 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
   releases: write
@@ -22,45 +25,27 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install build dependencies
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --timeout 120 pyinstaller
+        pip install pyinstaller PySide6
+        pip install vnpy vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
 
-    - name: Install PySide6
-      run: pip install --timeout 120 PySide6
-
-    - name: Install vnpy core (without CTP to avoid compilation issues)
+    - name: Build EXE
       run: |
-        pip install --timeout 180 vnpy
-        pip install --timeout 180 vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
+        pyinstaller app.spec --clean --noconfirm
 
-    - name: Check installed packages
-      run: |
-        pip list | grep -i vnpy
-
-    - name: Build EXE with PyInstaller
-      run: |
-        pyinstaller app.spec --clean --noconfirm 2>&1 || true
-        ls -la dist/ 2>/dev/null || echo "dist folder not found"
-
-    - name: Create ZIP archive
+    - name: Create ZIP
       if: success()
-      shell: bash
       run: |
-        if [ -d "dist/AIQuantSoftware" ]; then
-          cd dist
-          zip -r "AIQuantSoftware-${{ github.run_number }}.zip" "AIQuantSoftware"
-        else
-          echo "Build failed, no dist folder"
-          exit 1
-        fi
+        cd dist
+        powershell -Command "Compress-Archive -Path 'AIQuantSoftware' -DestinationPath 'AIQuantSoftware.zip' -Force"
 
-    - name: Upload EXE artifact
+    - name: Upload artifact
       if: success()
       uses: actions/upload-artifact@v4
       with:
-        name: AIQuantSoftware-EXE-${{ github.run_number }}
+        name: AIQuantSoftware-EXE
         path: dist/*.zip
         retention-days: 30
 
@@ -72,13 +57,6 @@ jobs:
         tag_name: v${{ github.run_number }}
         body: |
           ## AI量化软件 Windows EXE
-
           自动构建版本 #${{ github.run_number }}
-
-          ### 包含模块
-          - vnpy 核心
-          - CTA 策略模块
-          - 回测模块
-          - 数据管理模块
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -287,7 +287,7 @@
 ## 新增
 
 1. K线合成器（BarGenerator）增加对日K线的合成支持
-2. 基于华鑫奇点柜台的C++ API重构vnpy_tora，实现VeighNa Station加载支持
+2. 基于华鑫奇点柜台的C++ API重构vnpy_tora，实现AI智能量化软件 Station加载支持
 3. 新增vnpy_ib对于期权合约查询、波动率和希腊值等扩展行情数据的支持
 
 ## 调整
@@ -415,7 +415,7 @@
 1. 开启vnpy.rpc的pyzmq连接keepalive机制，避免在复杂网络环境下闲置连接的断开
 2. 移除vnpy_rpcservice中服务端的EVENT_TIMER定时事件推送
 3. 调整vnpy_postgresql采用批量方式写入数据，提高效率
-4. 添加VeighNa Trader中的子线程异常捕捉（需要Python>=3.8）
+4. 添加AI智能量化软件 Trader中的子线程异常捕捉（需要Python>=3.8）
 5. 调整vnpy_ib接口查询历史K线数据时，对外汇和贵金属均采用中间价（而非成交价）
 6. 增加vnpy_ctastrategy对于回测过程中资金爆仓（小于等于0）情况的检查
 7. 优化vnpy_webtrader模块的加密鉴权，支持web进程关闭重启
@@ -657,7 +657,7 @@
 2. 在MainWindow的AboutDialog中，基于importlib_metadata模块来获取版本信息
 3. 隐藏所有对话框右上角的【？】按钮
 4. 将易盛外盘TapGateway的合约信息，从行情接口获取改为交易接口获取（避免外盘合约size为0的问题）
-5. 改进VeighNa Trader的异常捕捉对话框弹出方式，避免多次重复报错情况下的程序卡死崩溃
+5. 改进AI智能量化软件 Trader的异常捕捉对话框弹出方式，避免多次重复报错情况下的程序卡死崩溃
 
 ## 修复
 1. 修复Linux下安装时，对于已经剥离的XTP API的自动编译操作

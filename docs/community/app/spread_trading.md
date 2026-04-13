@@ -7,9 +7,9 @@ SpreadTrading是用于**多合约价差套利**的功能模块，用户可以通
 
 ## 加载启动
 
-### VeighNa Station加载
+### AI智能量化软件 Station加载
 
-启动登录VeighNa Station后，点击【交易】按钮，在配置对话框中的【应用模块】栏勾选【SpreadTrading】。
+启动登录AI智能量化软件 Station后，点击【交易】按钮，在配置对话框中的【应用模块】栏勾选【SpreadTrading】。
 
 ### 脚本加载
 
@@ -28,7 +28,7 @@ main_engine.add_app(SpreadTradingApp)
 
 <span id="jump">
 
-对于用户自行开发的策略，需要放到VeighNa Trader运行时目录下的**strategies**目录中，才能被识别加载。具体的运行时目录路径，可以在VeighNa Trader主界面顶部的标题栏查看。
+对于用户自行开发的策略，需要放到AI智能量化软件 Trader运行时目录下的**strategies**目录中，才能被识别加载。具体的运行时目录路径，可以在AI智能量化软件 Trader主界面顶部的标题栏查看。
 
 对于在Windows上默认安装的用户来说，放置策略的strategies目录路径通常为：
 
@@ -40,7 +40,7 @@ main_engine.add_app(SpreadTradingApp)
 
 </span>
 
-在启动模块之前，请先连接交易接口（连接方法详见基本使用篇的连接接口部分）。看到VeighNa Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块（**如果在合约信息查询成功之前打开模块，可能会导致价差的价格跳动取值为零，进而在委托成交之后引发底层报错**），如下图所示：
+在启动模块之前，请先连接交易接口（连接方法详见基本使用篇的连接接口部分）。看到AI智能量化软件 Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块（**如果在合约信息查询成功之前打开模块，可能会导致价差的价格跳动取值为零，进而在委托成交之后引发底层报错**），如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/cta_strategy/1.png)
 
@@ -61,7 +61,7 @@ main_engine.add_app(SpreadTradingApp)
 
 在创建价差合约前，用户可以通过【查询合约】功能，寻找可以组成价差的合约（**不支持交易所套利合约**）：
 
-- 在VeighNa Trader菜单栏中点击【帮助】-> 【查询合约】按钮，弹出合约查询界面，如下图所示：
+- 在AI智能量化软件 Trader菜单栏中点击【帮助】-> 【查询合约】按钮，弹出合约查询界面，如下图所示：
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/spread_trading/3.png)
 - 在界面中找到可用于组成价差交易的合约；
 - 本文档以豆油期货的跨期套利来展示，即交易y2205.DCE（豆油期货22年5月到期合约）和y2209.DCE（豆油期货22年9月到期合约）。
@@ -156,7 +156,7 @@ main_engine.add_app(SpreadTradingApp)
 - 日志组件
   - 买入y_05_09价差合约的顺序是：发出y2205多头委托 -> y2205委托成交 -> 发出y2209空头委托 -> y2209委托成交。价差交易必须遵循的逻辑是主动腿成交后，才去用被动腿来对冲头寸，并且对冲必须尽可能及时。这也是为什么一般被动腿会选择较为活跃合约的原因。
 - 价差组件
-  - 买入1手豆油期货价差合约成交后，【净仓】从0变成1。实际上，VeighNa Trader【持仓】组件显示，y2205合约多头持仓1手，y2209合约空头持仓1手。
+  - 买入1手豆油期货价差合约成交后，【净仓】从0变成1。实际上，AI智能量化软件 Trader【持仓】组件显示，y2205合约多头持仓1手，y2209合约空头持仓1手。
 - 算法组件
   - 本次委托SpreadTaker算法执行情况：成交数量1手，委托状态是【全部成交】。
 
@@ -345,7 +345,7 @@ main_engine.add_app(SpreadTradingApp)
 
 2. 自建策略的类名不要与示例策略的类名重合。如果重合了，图形界面上只会显示一个策略类名。
 
-目前，VeighNa官方提供两个价差策略，即BasicSpreadStrategy和StatisticalArbitrageStrategy。下面通过StatisticalArbitrageStrategy示例，来展示策略开发的具体步骤：
+目前，AI智能量化软件官方提供两个价差策略，即BasicSpreadStrategy和StatisticalArbitrageStrategy。下面通过StatisticalArbitrageStrategy示例，来展示策略开发的具体步骤：
 
 在基于价差交易策略模板编写策略逻辑之前，需要在策略文件的顶部载入需要用到的内部组件，如下方代码所示：
 

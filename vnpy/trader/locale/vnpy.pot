@@ -228,7 +228,7 @@ msgid "遗传算法优化完成，耗时{}秒"
 msgstr ""
 
 #: vnpy\trader\ui\mainwindow.py:47
-msgid "VeighNa Trader 社区版 - {}   [{}]"
+msgid "AI智能量化软件 - {}   [{}]"
 msgstr ""
 
 #: vnpy\trader\ui\mainwindow.py:65
@@ -604,7 +604,7 @@ msgid "查询"
 msgstr ""
 
 #: vnpy\trader\ui\widget.py:1168
-msgid "关于VeighNa Trader"
+msgid "关于AI智能量化软件"
 msgstr ""
 
 #: vnpy\trader\ui\widget.py:1214

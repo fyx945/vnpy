@@ -1,5 +1,5 @@
 """
-Event-driven framework of VeighNa framework.
+Event-driven framework of AI Quantitative framework.
 """
 
 from collections import defaultdict

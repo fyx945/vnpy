@@ -20,7 +20,7 @@ build
 dist
 *.local
 
-# VeighNa
+# AI Quantitative Software
 .vntrader
 
 # Visual Studio intermediate files
@@ -41,3 +41,4 @@ _templates
 # Alpha
 lab/
 /.mypy_cache
+.gitnexus

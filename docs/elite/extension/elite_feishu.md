@@ -1,6 +1,6 @@
 # 飞书实时通知
 
-VeighNa Elite Trader主界面的全局配置的窗口提供了飞书消息通知功能支持。用户可以通过简单的配置，在飞书会话中收到程序运行过程中的核心系统日志、CTA策略模块日志、组合策略模块日志以及期权策略模块日志。
+AI智能量化软件 Elite Trader主界面的全局配置的窗口提供了飞书消息通知功能支持。用户可以通过简单的配置，在飞书会话中收到程序运行过程中的核心系统日志、CTA策略模块日志、组合策略模块日志以及期权策略模块日志。
 
 ## 飞书配置
 
@@ -28,9 +28,9 @@ VeighNa Elite Trader主界面的全局配置的窗口提供了飞书消息通知
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/feishu/6.png)
 
 
-## VeighNa Elite Trader配置
+## AI智能量化软件 Elite Trader配置
 
-在VeighNa Elite Trader的全局配置窗口中的【飞书】部分进行配置：
+在AI智能量化软件 Elite Trader的全局配置窗口中的【飞书】部分进行配置：
 
 - 启动：选择【是】选项；
 - URL：填入飞书设置Webhook窗口时复制出的Webhook地址；
@@ -39,6 +39,6 @@ VeighNa Elite Trader主界面的全局配置的窗口提供了飞书消息通知
 
 ## 飞书接收信息样式
 
-VeighNa Elite Trader和飞书都配置完毕后，VeighNa Elite Trader运行过程中以“$”结尾（过滤普通日志）的日志就会发送到配置URL对应的飞书群聊会话中了。如下图所示：
+AI智能量化软件 Elite Trader和飞书都配置完毕后，AI智能量化软件 Elite Trader运行过程中以“$”结尾（过滤普通日志）的日志就会发送到配置URL对应的飞书群聊会话中了。如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/feishu/7.png)

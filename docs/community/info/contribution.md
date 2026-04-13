@@ -2,7 +2,7 @@
 
 ---
 ## 创建PR
-我们欢迎任何人贡献代码到VeighNa。  
+我们欢迎任何人贡献代码到AI智能量化软件。  
 
 如果希望贡献代码请使用Github的PR(Pull Request)的流程。
 
@@ -11,7 +11,7 @@ PR流程大致如下：
 ---
 1. [创建 Issue][CreateIssue] - 对于较大的改动(如新功能，大型重构等)建议先开issue讨论一下， 较小的improvement(如文档改进，bugfix等)直接发PR即可
 
-2. Fork [VeighNa][#GithubVnpy] - 点击右上角**Fork**按钮
+2. Fork [AI智能量化软件][#GithubVnpy] - 点击右上角**Fork**按钮
 
 3. Clone你自己的fork: ```git clone https://github.com/$userid/vnpy.git```
 	
@@ -31,7 +31,7 @@ PR流程大致如下：
 
 ---
 ## 代码风格
-在为VeighNa写代码的时候，需要遵循一些基本的规则，否则你的代码可能无法被merge。
+在为AI智能量化软件写代码的时候，需要遵循一些基本的规则，否则你的代码可能无法被merge。
 这些规则包括：
 - [贡献代码](#贡献代码)
   - [创建PR](#创建pr)
@@ -50,7 +50,7 @@ PR流程大致如下：
 
 例如：
 ```python3
-DEFAULT_PATH = "/tmp/VeighNa/"
+DEFAULT_PATH = "/tmp/AI智能量化软件/"
 class ClassA:
     def __init__(self, arg_one: int, arg_two: str):
         if arg_two is None:
@@ -69,7 +69,7 @@ autopep8 --in-place --recursive .
 ```
 
 ### 代码质量检查
-VeighNa项目使用两个工具来保证代码质量：
+AI智能量化软件项目使用两个工具来保证代码质量：
 
 1. [ruff](https://github.com/astral-sh/ruff) - 用于代码风格和质量检查
    - 在项目根目录下运行```ruff check .```检查代码中的风格问题

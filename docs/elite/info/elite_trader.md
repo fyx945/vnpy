@@ -5,23 +5,23 @@
 
 ### 点击图标启动
 
-安装成功后，双击桌面上VeighNa Elite Trader快捷方式：
+安装成功后，双击桌面上AI智能量化软件 Elite Trader快捷方式：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/install/4.png)
 
-即可运行VeighNa Elite Trader。
+即可运行AI智能量化软件 Elite Trader。
 
 ### 用户登录
 
-每次使用VeighNa Elite Trader都会弹出包含用户名输入框以及密码输入框的登录界面，如下图所示：
+每次使用AI智能量化软件 Elite Trader都会弹出包含用户名输入框以及密码输入框的登录界面，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/trader/1.png)
 
-用户按照要求在用户名输入框中输入用户名，在密码输入框中输入密码后，点击【登录】按钮，即可完成登录进入VeighNa Elite Trader主运行程序，如下图所示：
+用户按照要求在用户名输入框中输入用户名，在密码输入框中输入密码后，点击【登录】按钮，即可完成登录进入AI智能量化软件 Elite Trader主运行程序，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/trader/8.png)
 
-请注意，若VeighNa Elite Trader启动时检测到已有更新版本发布，则会弹出【更新提示】窗口。若点击【Yes】则立即更新，若点击【No】则跳过更新正常登录。
+请注意，若AI智能量化软件 Elite Trader启动时检测到已有更新版本发布，则会弹出【更新提示】窗口。若点击【Yes】则立即更新，若点击【No】则跳过更新正常登录。
 
 ### 加载接口
 
@@ -73,9 +73,9 @@
 
 ## 登录资金账号
 
-以登录**CTP**接口为例，在VeighNa Elite Trader上的菜单栏中点击【系统】->【连接CTP】，即可连接CTP接口。
+以登录**CTP**接口为例，在AI智能量化软件 Elite Trader上的菜单栏中点击【系统】->【连接CTP】，即可连接CTP接口。
 
-连接成功以后，VeighNa Elite Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到账号信息，持仓信息，合约查询等相关信息。如下图所示：
+连接成功以后，AI智能量化软件 Elite Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到账号信息，持仓信息，合约查询等相关信息。如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/trader/9.png)
 
@@ -170,14 +170,14 @@
 
 ## 应用模块
 
-VeighNa Elite提供了开箱即用的量化交易应用模块，在启动VeighNa Elite Trader时加载所需的应用模块，启动成功后在菜单栏中点击【功能】，即可在弹出的菜单中看到应用模块的对应按钮，同时在窗口最左侧区域也会有带图标的模块按钮用于快速打开应用，如下图所示：
+AI智能量化软件 Elite提供了开箱即用的量化交易应用模块，在启动AI智能量化软件 Elite Trader时加载所需的应用模块，启动成功后在菜单栏中点击【功能】，即可在弹出的菜单中看到应用模块的对应按钮，同时在窗口最左侧区域也会有带图标的模块按钮用于快速打开应用，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/trader/28.png)
 
 
 ## 全局配置
 
-点击VeighNa Elite Trader菜单栏上的【配置】按钮弹出【全局配置】窗口，如下图所示：
+点击AI智能量化软件 Elite Trader菜单栏上的【配置】按钮弹出【全局配置】窗口，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/trader/29.png)
 
@@ -194,17 +194,17 @@ VeighNa Elite提供了开箱即用的量化交易应用模块，在启动VeighNa
 
 ### 显示
 
-- 字体：设置VeighNa Elite Trader图形界面的字体类型，除了默认的Arial字体，也支持Courier New和System字体；
-- 大小：设置VeighNa Elite Trader图形界面的字体大小，用户可以根据自己显示器的实际分辨率对字体大小进行修改。
+- 字体：设置AI智能量化软件 Elite Trader图形界面的字体类型，除了默认的Arial字体，也支持Courier New和System字体；
+- 大小：设置AI智能量化软件 Elite Trader图形界面的字体大小，用户可以根据自己显示器的实际分辨率对字体大小进行修改。
 
 ### 日志
 
-- 启动：控制是否启动LogEngine，默认为True。如果该项修改为False，则后续几项参数都将失效，同时VeighNa Elite Trader运行时不再输出日志或生成日志文件（可以降低部分系统延时）；
+- 启动：控制是否启动LogEngine，默认为True。如果该项修改为False，则后续几项参数都将失效，同时AI智能量化软件 Elite Trader运行时不再输出日志或生成日志文件（可以降低部分系统延时）；
 - 级别：控制日志输出的级别，日志可以从轻到严重分成DEBUG、INFO、WARNING、ERROR、CRITICAL五个级别，分别对应10、20、30、40、50的整数值。如果日志等级低于该项设置值，将会被忽略。如果想要记录更详细的系统运行信息，建议将该项整数值调低；
 - 终端输出：控制是否终端输出；
 - 文件输出：该参数用于控制是否要将日志输出到文件中，建议设置为True，否则无法记录生成的日志。
 
-VeighNa Elite Trader的日志文件，默认位于运行时目录的.vntrader\log目录下，完整路径为：
+AI智能量化软件 Elite Trader的日志文件，默认位于运行时目录的.vntrader\log目录下，完整路径为：
 ```
 C:\users\administrator\.vntrader\log
 ```
@@ -239,15 +239,15 @@ C:\users\administrator\.vntrader\log
 
 ### 加载
 
-VeighNa Elite Trader提供了多账户批量下单交易支持（手动）。
+AI智能量化软件 Elite Trader提供了多账户批量下单交易支持（手动）。
 
 以登录**CTP**接口为例，在登录界面下方的【交易接口】标签页的下拉框中先选中CTP接口。在“自定义接口”处填写自定义的接口名（例如“CTP1”、“CTP2”）之后点击【添加】按钮，填写对应账户的配置信息，点击【确定】按钮，则可依次加载对应账户的接口。如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/trader/14.png)
 
-添加完毕后，点击登录界面的【登录】按钮登录VeighNa Elite Trader。在菜单栏中依次点击【系统】->【连接xxx】（xxx是自定义的接口名，若加载时填写的“CTP1”，则菜单栏中显示的就是【连接CTP1】），即可连接对应接口。
+添加完毕后，点击登录界面的【登录】按钮登录AI智能量化软件 Elite Trader。在菜单栏中依次点击【系统】->【连接xxx】（xxx是自定义的接口名，若加载时填写的“CTP1”，则菜单栏中显示的就是【连接CTP1】），即可连接对应接口。
 
-连接成功以后，VeighNa Elite Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到对应的账号信息，持仓信息等相关信息。
+连接成功以后，AI智能量化软件 Elite Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到对应的账号信息，持仓信息等相关信息。
 
 日志组件如下图所示：
 

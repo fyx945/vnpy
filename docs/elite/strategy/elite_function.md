@@ -1,6 +1,6 @@
 # 指标计算函数
 
-VeighNa Elite Trader的CTA策略模块内置了以下计算函数供策略调用：
+AI智能量化软件 Elite Trader的CTA策略模块内置了以下计算函数供策略调用：
 
 **sma** ：简单移动平均
 

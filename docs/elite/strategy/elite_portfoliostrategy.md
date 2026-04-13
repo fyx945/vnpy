@@ -12,7 +12,7 @@ PortfolioStrategy模块充分利用了多核CPU，支持多进程组合策略交
 
 PortfolioStrategy模块需要启动之前通过【策略应用】标签页加载。
 
-启动登录VeighNa Elite Trader后，启动模块之前，请先连接交易接口。看到VeighNa Elite Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块。
+启动登录AI智能量化软件 Elite Trader后，启动模块之前，请先连接交易接口。看到AI智能量化软件 Elite Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块。
 
 请注意，IB接口因为登录时无法自动获取所有的合约信息，只有在用户手动订阅行情时才能获取。因此需要在主界面上先行手动订阅合约行情，再启动模块。
 
@@ -31,7 +31,7 @@ PortfolioStrategy模块需要启动之前通过【策略应用】标签页加载
 
 <span id="jump">
 
-对于用户自行开发的策略，需要放到VeighNa Elite Trader运行时目录下的**strategies**目录中，才能被识别加载。具体的运行时目录路径，可以在VeighNa Elite Trader主界面顶部的标题栏查看。
+对于用户自行开发的策略，需要放到AI智能量化软件 Elite Trader运行时目录下的**strategies**目录中，才能被识别加载。具体的运行时目录路径，可以在AI智能量化软件 Elite Trader主界面顶部的标题栏查看。
 
 对于在Windows上默认安装的用户来说，放置策略的strategies目录路径通常为：
 
@@ -103,7 +103,7 @@ C:\Users\Administrator\strategies
 
 在上一步策略初始化的过程中，尽管策略同样在接收（历史）数据，并调用对应的功能函数，但因为【trading】状态为【False】，所以并不会有任何真正的委托下单操作或者交易相关的日志信息输出。
 
-如果启动之后，策略发出了委托，可以去VeighNa Trader主界面【委托】栏查看委托订单细节。
+如果启动之后，策略发出了委托，可以去AI智能量化软件 Trader主界面【委托】栏查看委托订单细节。
 
 请注意，与CTA策略模块不同，多合约组合策略**不提供本地停止单功能**，所以UI界面上不会有停止单的显示区域了。
 
@@ -118,7 +118,7 @@ C:\Users\Administrator\strategies
 
 此时可观察到该策略实例的【trading】状态已变为【False】，说明此时该策略实例已经停止自动交易了。
 
-在多合约组合策略的实盘交易过程中，正常情况应该让策略在整个交易时段中都自动运行，尽量不要有额外的暂停重启类操作。对于国内期货市场来说，应该在交易时段开始前，启动策略的自动交易，然后直到收盘后，再关闭自动交易。因为现在CTP夜盘收盘后也会关闭系统，早上开盘前重启，所以夜盘收盘后也需要停止策略，关闭VeighNa Trader了。
+在多合约组合策略的实盘交易过程中，正常情况应该让策略在整个交易时段中都自动运行，尽量不要有额外的暂停重启类操作。对于国内期货市场来说，应该在交易时段开始前，启动策略的自动交易，然后直到收盘后，再关闭自动交易。因为现在CTP夜盘收盘后也会关闭系统，早上开盘前重启，所以夜盘收盘后也需要停止策略，关闭AI智能量化软件 Trader了。
 
 
 ## 编辑策略
@@ -206,9 +206,9 @@ C:\Users\Administrator\strategies
 
 以登录**CTP**接口为例，在登录界面下方的【交易接口】标签页的下拉框中先选中CTP接口。在“自定义接口”处填写自定义的接口名（例如“CTP1”、“CTP2”）之后点击【添加】按钮，填写子账户的配置信息，点击【确定】按钮，则可依次加载对应账户的接口。
 
-添加完毕后，点击登录界面的【登录】按钮登录VeighNa Elite Trader。在菜单栏中依次点击【系统】->【连接xxx】（xxx是自定义的接口名，若加载时填写的“CTP1”，则菜单栏中显示的就是【连接CTP1】），即可连接子账户接口。
+添加完毕后，点击登录界面的【登录】按钮登录AI智能量化软件 Elite Trader。在菜单栏中依次点击【系统】->【连接xxx】（xxx是自定义的接口名，若加载时填写的“CTP1”，则菜单栏中显示的就是【连接CTP1】），即可连接子账户接口。
 
-连接成功以后，VeighNa Elite Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到对应的账号信息，持仓信息等相关信息。
+连接成功以后，AI智能量化软件 Elite Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到对应的账号信息，持仓信息等相关信息。
 
 ### 多进程组合策略模块批量下单
 
@@ -220,7 +220,7 @@ C:\Users\Administrator\strategies
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/portfoliostrategy/17.png)
 
-策略实例发出委托后，可在VeighNa Elite Trader主界面【委托】组件和【成交】组件上跟踪到根据对应接口下单的委托，如下图所示：
+策略实例发出委托后，可在AI智能量化软件 Elite Trader主界面【委托】组件和【成交】组件上跟踪到根据对应接口下单的委托，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/elite/portfoliostrategy/18.png)
 
@@ -241,4 +241,4 @@ C:\Users\Administrator\strategies
 
 ### StrategyTemplate
 
-VeighNa Elite Trader对vnpy_portfoliostrategy自带的StrategyTemplate提供支持，通过StrategyTemplate开发的策略可在VeighNa Elite Trader的多合约组合策略模块上成功运行。
+AI智能量化软件 Elite Trader对vnpy_portfoliostrategy自带的StrategyTemplate提供支持，通过StrategyTemplate开发的策略可在AI智能量化软件 Elite Trader的多合约组合策略模块上成功运行。

@@ -18,7 +18,7 @@ from ..locale import _
 Qt = QtCore.Qt
 
 
-def create_qapp(app_name: str = "VeighNa Trader") -> QtWidgets.QApplication:
+def create_qapp(app_name: str = "AI智能量化软件") -> QtWidgets.QApplication:
     """
     Create Qt Application.
     """
@@ -122,4 +122,4 @@ class ExceptionWidget(QtWidgets.QWidget):
 
     def _open_community(self) -> None:
         """"""
-        webbrowser.open("https://www.vnpy.com/forum/forum/2-ti-wen-qiu-zhu")
+        webbrowser.open("https://it.zhengyee.com/forum/forum/2-ti-wen-qiu-zhu")

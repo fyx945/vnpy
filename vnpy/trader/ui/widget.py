@@ -1185,22 +1185,22 @@ class AboutDialog(QtWidgets.QDialog):
 
     def init_ui(self) -> None:
         """"""
-        self.setWindowTitle(_("关于VeighNa Trader"))
+        self.setWindowTitle(_("关于AI智能量化软件"))
 
         from ... import __version__ as vnpy_version
 
         text: str = f"""
             By Traders, For Traders.
 
-            Created by VeighNa Technology
+            AI智能量化软件技术团队
 
 
             License：MIT
-            Website：www.vnpy.com
-            Github：www.github.com/vnpy/vnpy
+            Website：www.example.com
+            Github：github.com/example
 
 
-            VeighNa - {vnpy_version}
+            AI智能量化软件 - {vnpy_version}
             Python - {platform.python_version()}
             PySide6 - {metadata.version("pyside6")}
             NumPy - {metadata.version("numpy")}

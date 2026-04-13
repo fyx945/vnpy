@@ -2,16 +2,16 @@
 
 ## Mac系统的CTP接口支持
 
-得益于Python语言本身的跨平台优势（Windows、Linux、Mac三大系统），VeighNa量化交易平台的核心框架部分很早就可以在Mac系统上运行。
+得益于Python语言本身的跨平台优势（Windows、Linux、Mac三大系统），AI智能量化软件量化交易平台的核心框架部分很早就可以在Mac系统上运行。
 
 但由于C++类交易API对于Mac系统支持的普遍不足，导致之前只有vnpy_ib等少数【纯Python实现】的交易接口可以在Mac系统上运行，对于大部分用户来说没什么实际价值。
 
-从6.6.7版本的CTP API开始，上期技术官方推出了对Mac系统支持，包括Intel（x86_64）和苹果M系（arm64）芯片。终于，VeighNa平台可以在Mac系统上为期货量化用户提供从投研回测到实盘交易的一体化解决方案。
+从6.6.7版本的CTP API开始，上期技术官方推出了对Mac系统支持，包括Intel（x86_64）和苹果M系（arm64）芯片。终于，AI智能量化软件平台可以在Mac系统上为期货量化用户提供从投研回测到实盘交易的一体化解决方案。
 
 
-## Mac系统的VeighNa安装流程
+## Mac系统的AI智能量化软件安装流程
 
-目前Mac系统上还没有类似VeighNa Studio的开箱即用发行版，需要手动完成安装流程：
+目前Mac系统上还没有类似AI智能量化软件 Studio的开箱即用发行版，需要手动完成安装流程：
 
 1. 前往Python官网下载3.10版本的安装包（或者使用brew安装），安装完成后在终端（Terminal）中运行命令：
 
@@ -39,7 +39,7 @@ python3 -m pip install ta-lib --index=https://pypi.doubanio.com/simple
 python3 -m pip install rqdatac --index=https://pypi2.ricequant.com/simple
 ```
 
-5. 安装VeighNa核心框架，以及需要使用的功能插件模块：
+5. 安装AI智能量化软件核心框架，以及需要使用的功能插件模块：
 
 
 ```python3
@@ -86,7 +86,7 @@ pip3 install -e .
 
 以上两个文件由于本身是二进制格式，并不能正常打开，但不影响添加到系统信任名单。
 
-完成后即可使用run.py脚本启动VeighNa Trader，代码如下：
+完成后即可使用run.py脚本启动AI智能量化软件 Trader，代码如下：
 
 ```python3
 from vnpy.event import EventEngine
@@ -98,7 +98,7 @@ from vnpy_ctabacktester import CtaBacktesterApp
 from vnpy_datamanager import DataManagerApp
 
 def main():
-    """Start VeighNa Trader"""
+    """Start AI智能量化软件 Trader"""
     qapp = create_qapp()
 
     event_engine = EventEngine()

@@ -1,17 +1,17 @@
 # VSCode开发指南
 
-VSCode（Visual Studio Code）是微软开发的跨平台免费源代码编辑器。用户可以通过内置的扩展程序商店安装扩展，以拓展其功能。本文档旨在为用户提供在VSCode中开发VeighNa的参考方案。
+VSCode（Visual Studio Code）是微软开发的跨平台免费源代码编辑器。用户可以通过内置的扩展程序商店安装扩展，以拓展其功能。本文档旨在为用户提供在VSCode中开发AI智能量化软件的参考方案。
 
 本文内容基于Windows系统编写，但大部分也适用于Linux和Mac系统。
 
-VeighNa支持的Windows系统包括：
+AI智能量化软件支持的Windows系统包括：
 
 - Windows 11
 - Windows Server 2019/2022
 
 > 其他版本的Windows系统安装时可能遇到各种依赖库问题，不推荐使用。
 
-在Windows系统上使用VeighNa，推荐安装官方推出的【VeighNa Studio】Python发行版，**特别适合初次接触Python开发的新手用户**。
+在Windows系统上使用AI智能量化软件，推荐安装官方推出的【AI智能量化软件 Studio】Python发行版，**特别适合初次接触Python开发的新手用户**。
 
 
 ## VSCode安装
@@ -54,7 +54,7 @@ VeighNa支持的Windows系统包括：
 如果勾选了运行 Visual Studio Code选项的话，此时会自动打开VSCode。
 
 
-## VeighNa开发
+## AI智能量化软件开发
 
 ### 打开单一文件
 
@@ -96,7 +96,7 @@ VeighNa支持的Windows系统包括：
 
 ### 运行程序
 
-从Github代码仓库下载VeighNa Trader[启动脚本文件run.py](https://github.com/vnpy/vnpy/blob/master/examples/veighna_trader/run.py)，通过VSCode打开run.py文件，如下图所示：
+从Github代码仓库下载AI智能量化软件 Trader[启动脚本文件run.py](https://github.com/vnpy/vnpy/blob/master/examples/veighna_trader/run.py)，通过VSCode打开run.py文件，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/vscode/23.png)
 
@@ -108,18 +108,18 @@ VeighNa支持的Windows系统包括：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/vscode/25.png)
 
-与此同时，VeighNa Trader的主窗口也会自动弹出显示：
+与此同时，AI智能量化软件 Trader的主窗口也会自动弹出显示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/vscode/26.png)
 
 请注意：
  - 这里启动脚本时，会在当前VSCode使用的Python环境中运行，如须使用其他Python环境请参考前文的步骤进行切换；
- - 如果想直接在终端中运行脚本，可以按住Ctrl + J打开Terminal，在其中输入用命令启动VeighNa Trader；
- - 上图中打印的“没有配置要使用的数据服务，请修改全局配置中的datafeed相关内容”输出不影响VeighNa Trader的运行；如果需要配置数据服务，可以在VeighNa Trader主界面【配置】-【全局配置】中配置即可，如果不需要配置数据服务则忽略此条输出即可。
+ - 如果想直接在终端中运行脚本，可以按住Ctrl + J打开Terminal，在其中输入用命令启动AI智能量化软件 Trader；
+ - 上图中打印的“没有配置要使用的数据服务，请修改全局配置中的datafeed相关内容”输出不影响AI智能量化软件 Trader的运行；如果需要配置数据服务，可以在AI智能量化软件 Trader主界面【配置】-【全局配置】中配置即可，如果不需要配置数据服务则忽略此条输出即可。
 
 ### 断点调试
 
-VSCode提供了强大的断点调试功能，这里使用一个VeighNa的策略历史回测脚本来演示。
+VSCode提供了强大的断点调试功能，这里使用一个AI智能量化软件的策略历史回测脚本来演示。
 
 点击【New File】，在界面上方弹出的窗口中选择【Python File】, 在弹出的标签页中创建backtest.py：
 

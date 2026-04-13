@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'VeighNa'
+project = 'AI智能量化软件'
 copyright = '2015 - 2024, 上海韦纳软件科技有限公司'
 author = '上海韦纳软件科技有限公司'
 
@@ -93,7 +93,7 @@ html_theme_options = {
     'github_repo': 'vnpy',
     'github_type': 'star',
     'description': (r"<div class='col-md-12'>"
-                    r"<strong>VeighNa</strong>"
+                    r"<strong>AI智能量化软件</strong>"
                     r"</div>"
                     r"<br/>"
                     r"By Traders, For Traders"),
@@ -161,7 +161,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'vnpy.tex', 'vnpy Documentation',
-     'VeighNa Team', 'manual'),
+     'AI量化软件团队', 'manual'),
 ]
 
 # -- Options for manual page output ------------------------------------------

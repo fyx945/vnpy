@@ -2,7 +2,7 @@
 
 ## 功能简介
 
-ExcelRtd是用于**在Excel中访问VeighNa程序内任意数据信息**的功能模块，
+ExcelRtd是用于**在Excel中访问AI智能量化软件程序内任意数据信息**的功能模块，
 RTD全称是RealTimeData，是微软提供的主要面向金融行业中实时数据需求设计的Excel数据对接方案。ExcelRtd依赖于PyXLLC模块（www.pyxll.com），该模块属于商业软件，需要购买才能使用（提供30天免费使用）。
 
 ## 安装PyXLL
@@ -40,9 +40,9 @@ pyxll install
 
 ## 加载启动
 
-### VeighNa Station加载
+### AI智能量化软件 Station加载
 
-启动登录VeighNa Station后，点击【交易】按钮，在配置对话框中的【应用模块】栏勾选【ExcelRtd】。
+启动登录AI智能量化软件 Station后，点击【交易】按钮，在配置对话框中的【应用模块】栏勾选【ExcelRtd】。
 
 ### 脚本加载
 
@@ -58,7 +58,7 @@ main_engine.add_app(ExcelRtdApp)
 
 ## 启动模块
 
-在启动模块之前，请先连接交易接口（连接方法详见基本使用篇的连接接口部分）。看到VeighNa Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块，如下图所示：
+在启动模块之前，请先连接交易接口（连接方法详见基本使用篇的连接接口部分）。看到AI智能量化软件 Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/cta_strategy/1.png)
 
@@ -85,7 +85,7 @@ main_engine.add_app(ExcelRtdApp)
 
 上图是获取豆油2205四个字段实时数据（分别是bid_price_1、high_price、low_price以及last_price）的例子。
 
-从图中可以看出rtd_tick_data函数需要两个参数：一个是vt_symbol，另一个是VeighNa中定义的TickData的属性（具体属性可参考源代码vnpy.trader.object.TickData）。这两个参数都是字符串，第一个参数可以通过单元格的具体位置指定，比如“A1”表示A列第1行的数据。
+从图中可以看出rtd_tick_data函数需要两个参数：一个是vt_symbol，另一个是AI智能量化软件中定义的TickData的属性（具体属性可参考源代码vnpy.trader.object.TickData）。这两个参数都是字符串，第一个参数可以通过单元格的具体位置指定，比如“A1”表示A列第1行的数据。
 
 与此同时，在Excel RTD模块的图形界面中也能看到相应输出，如下图所示：
 

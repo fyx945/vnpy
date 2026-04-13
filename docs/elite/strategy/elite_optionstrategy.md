@@ -12,7 +12,7 @@ OptionStrategy模块针对复杂期权策略，提供了ContractManager组件用
 
 OptionStrategy模块需要启动之前通过【策略应用】标签页加载。
 
-启动登录VeighNa Elite Trader后，启动模块之前，请先连接交易接口。看到VeighNa Elite Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块。
+启动登录AI智能量化软件 Elite Trader后，启动模块之前，请先连接交易接口。看到AI智能量化软件 Elite Trader主界面【日志】栏输出“合约信息查询成功”之后再启动模块。
 
 请注意，IB接口因为登录时无法自动获取所有的合约信息，只有在用户手动订阅行情时才能获取。因此需要在主界面上先行手动订阅合约行情，再启动模块。
 
@@ -31,7 +31,7 @@ OptionStrategy模块需要启动之前通过【策略应用】标签页加载。
 
 <span id="jump">
 
-对于用户自行开发的策略，需要放到VeighNa Elite Trader运行时目录下的**strategies**目录中，才能被识别加载。具体的运行时目录路径，可以在VeighNa Elite Trader主界面顶部的标题栏查看。
+对于用户自行开发的策略，需要放到AI智能量化软件 Elite Trader运行时目录下的**strategies**目录中，才能被识别加载。具体的运行时目录路径，可以在AI智能量化软件 Elite Trader主界面顶部的标题栏查看。
 
 对于在Windows上默认安装的用户来说，放置策略的strategies目录路径通常为：
 
@@ -99,7 +99,7 @@ C:\Users\Administrator\strategies
 
 在上一步策略初始化的过程中，尽管策略同样在接收（历史）数据（若初始化函数中调用了load_bars函数），并调用对应的功能函数，但因为【trading】状态为【False】，所以并不会有任何真正的委托下单操作或者交易相关的日志信息输出。
 
-如果启动之后，策略发出了委托，可以去VeighNa Elite Trader主界面【委托】栏查看委托订单细节。
+如果启动之后，策略发出了委托，可以去AI智能量化软件 Elite Trader主界面【委托】栏查看委托订单细节。
 
 
 ## 停止策略
@@ -112,7 +112,7 @@ C:\Users\Administrator\strategies
 
 此时可观察到该策略实例的【trading】状态已变为【False】，说明此时该策略实例已经停止自动交易了。
 
-在期权策略的实盘交易过程中，正常情况应该让策略在整个交易时段中都自动运行，尽量不要有额外的暂停重启类操作。对于国内期货市场来说，应该在交易时段开始前，启动策略的自动交易，然后直到收盘后，再关闭自动交易。因为现在CTP夜盘收盘后也会关闭系统，早上开盘前重启，所以夜盘收盘后也需要停止策略，关闭VeighNa Elite Trader了。
+在期权策略的实盘交易过程中，正常情况应该让策略在整个交易时段中都自动运行，尽量不要有额外的暂停重启类操作。对于国内期货市场来说，应该在交易时段开始前，启动策略的自动交易，然后直到收盘后，再关闭自动交易。因为现在CTP夜盘收盘后也会关闭系统，早上开盘前重启，所以夜盘收盘后也需要停止策略，关闭AI智能量化软件 Elite Trader了。
 
 
 ## 编辑策略
@@ -205,7 +205,7 @@ C:\Users\Administrator\strategies
 
 ### StrategyTemplate
 
-VeighNa Elite Trader的期权策略交易模块提供了StrategyTemplate专业期权策略模板，以实现复杂的期权策略开发。
+AI智能量化软件 Elite Trader的期权策略交易模块提供了StrategyTemplate专业期权策略模板，以实现复杂的期权策略开发。
 
 ### 策略引擎调用的函数
 
@@ -664,7 +664,7 @@ class MyOptionStrategy(StrategyTemplate):
  - dt_symbol: 指定时间戳监控合约代码，用于控制K线生成的节奏（收到该合约下一分钟tick就合成所有合约上一分钟bar），留空则不指定
 
 工作原理
-OptionBarGenerator通过持续接收tick数据更新内部状态，当检测到分钟变化时，会生成当前分钟的K线截面并通过回调函数返回。如果指定了时间戳监控合约，则只有当该合约的时间戳发生分钟变化时，才会触发K线截面的生成。如果指定了时间戳监控合约并且配置了合约过滤信息（可参考[行情数据过滤文档](https://www.vnpy.com/docs/cn/elite/strategy/elite_filter.html)），则只有当该合约的时间戳发生分钟变化时且在有效交易时段内，才会触发K线截面的生成。
+OptionBarGenerator通过持续接收tick数据更新内部状态，当检测到分钟变化时，会生成当前分钟的K线截面并通过回调函数返回。如果指定了时间戳监控合约，则只有当该合约的时间戳发生分钟变化时，才会触发K线截面的生成。如果指定了时间戳监控合约并且配置了合约过滤信息（可参考[行情数据过滤文档](https://it.zhengyee.com/docs/cn/elite/strategy/elite_filter.html)），则只有当该合约的时间戳发生分钟变化时且在有效交易时段内，才会触发K线截面的生成。
 
 
 ## 策略回测

@@ -7,28 +7,28 @@
 
 > 其他版本的Windows系统安装时可能遇到各种依赖库问题，不推荐使用。
 
-在Windows系统上安装VeighNa，推荐使用官方推出的【VeighNa Studio Python发行版】，**尤其是初次接触Python的编程新手**。
+在Windows系统上安装AI智能量化软件，推荐使用官方推出的【AI智能量化软件 Studio Python发行版】，**尤其是初次接触Python的编程新手**。
 
-作为一站式的量化投研交易Python环境，VeighNa Studio整合了：
+作为一站式的量化投研交易Python环境，AI智能量化软件 Studio整合了：
 
 - Python 3.10 64位（Python官网版本）
-- VeighNa和其他相关依赖库
-- VeighNa Station（VeighNa框架的图形化管理工具）
+- AI智能量化软件和其他相关依赖库
+- AI智能量化软件 Station（AI智能量化软件框架的图形化管理工具）
 
 对于已经有比较丰富的编程经验或者需要用到特定Python发行版（如Anaconda）的用户，也可以采用手动安装的方案。
 
 
-## VeighNa Studio方案
+## AI智能量化软件 Studio方案
 
 ### 下载安装
 
-在[VeighNa官网](https://www.vnpy.com/)可以下载VeighNa Studio安装包。
+在[AI智能量化软件官网](https://it.zhengyee.com/)可以下载AI智能量化软件 Studio安装包。
 
-下载完成后，双击安装包进入VeighNa Studio安装向导（推荐点击右键，选择【使用管理员身份运行】进行安装），使用默认设置点击【快速安装】按钮即可进行VeighNa Studio安装，如下图所示：
+下载完成后，双击安装包进入AI智能量化软件 Studio安装向导（推荐点击右键，选择【使用管理员身份运行】进行安装），使用默认设置点击【快速安装】按钮即可进行AI智能量化软件 Studio安装，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/install/21.png)
 
-> 推荐将VeighNa Studio安装在默认路径的C:\veighna_studio，其他VeighNa文档和教程中均使用该目录作为VeighNa安装目录进行讲解。
+> 推荐将AI智能量化软件 Studio安装在默认路径的C:\veighna_studio，其他AI智能量化软件文档和教程中均使用该目录作为AI智能量化软件安装目录进行讲解。
 
 如果想进行个性化安装，可点击【自定义安装】进入高级选项页面，如下图所示：
 
@@ -38,11 +38,11 @@
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/install/26.png)
 
-此时桌面会出现VeighNa Station的图标，双击图标即可运行VeighNa Station。
+此时桌面会出现AI智能量化软件 Station的图标，双击图标即可运行AI智能量化软件 Station。
 
 ### 使用
 
-安装成功后，启动命令行工具即可直接使用VeighNa Studio Python发行版。
+安装成功后，启动命令行工具即可直接使用AI智能量化软件 Studio Python发行版。
 
 输入python即可进入python的交互式环境，如下图所示：
 
@@ -71,7 +71,7 @@ examples.run()
 
 ### 修改
 
-如果安装之后，想要添加或者移除某项功能，可以双击VeighNa Studio的安装包，进入VeighNa Studio安装界面，如下图所示：
+如果安装之后，想要添加或者移除某项功能，可以双击AI智能量化软件 Studio的安装包，进入AI智能量化软件 Studio安装界面，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/install/33.png)
 
@@ -87,7 +87,7 @@ examples.run()
 
 ### 修复
 
-如果安装之后，出现安装不完整或者其他需要修复的情况，可以双击VeighNa Studio的安装包，进入VeighNa Studio安装界面，如下图所示：
+如果安装之后，出现安装不完整或者其他需要修复的情况，可以双击AI智能量化软件 Studio的安装包，进入AI智能量化软件 Studio安装界面，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/install/33.png)
 
@@ -101,7 +101,7 @@ examples.run()
 
 ### 卸载
 
-如果想卸载VeighNa Studio， 可以双击VeighNa Studio的安装包，进入VeighNa Studio安装界面，如下图所示：
+如果想卸载AI智能量化软件 Studio， 可以双击AI智能量化软件 Studio的安装包，进入AI智能量化软件 Studio安装界面，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/install/33.png)
 
@@ -129,12 +129,12 @@ examples.run()
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/install/23.png)
 
 
-### 下载安装VeighNa  
+### 下载安装AI智能量化软件  
 
-下载VeighNa源代码（Windows系统请选择zip格式）：
+下载AI智能量化软件源代码（Windows系统请选择zip格式）：
 
-- [VeighNa Github下载地址](https://github.com/vnpy/vnpy/releases)
-- [VeighNa Gitee下载地址](https://gitee.com/mirrors/vn-py/releases)
+- [AI智能量化软件 Github下载地址](https://github.com/vnpy/vnpy/releases)
+- [AI智能量化软件 Gitee下载地址](https://gitee.com/mirrors/vn-py/releases)
 
 下载完成后解压，然后启动命令行工具（CMD或者PowerShell），进入源代码所在的目录后（即install.bat文件所在的目录），输入下列命令运行脚本执行一键安装：
 
@@ -145,15 +145,15 @@ install.bat
 一键安装过程整体分为3步：
 
 1. 下载安装ta-lib库；
-2. 安装VeighNa本身。
+2. 安装AI智能量化软件本身。
 
-如果某一步安装过程中发生错误，请截取保存命令行中的报错信息（**注意优先保存底部的报错内容**），前往VeighNa社区论坛发帖提问寻求帮助。
+如果某一步安装过程中发生错误，请截取保存命令行中的报错信息（**注意优先保存底部的报错内容**），前往AI智能量化软件社区论坛发帖提问寻求帮助。
 
-### 启动VeighNa Trader
+### 启动AI智能量化软件 Trader
 
-启动命令行工具，进入解压VeighNa源代码的目录下，在文件夹examples/veighna_trader中找到run.py文件。
+启动命令行工具，进入解压AI智能量化软件源代码的目录下，在文件夹examples/veighna_trader中找到run.py文件。
 
-输入如下命令即可启动VeighNa Trader：
+输入如下命令即可启动AI智能量化软件 Trader：
 
 ```
 python run.py 

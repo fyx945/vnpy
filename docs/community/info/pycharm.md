@@ -1,17 +1,17 @@
 # PyCharm开发指南
 
-PyCharm是由JetBrains公司推出针对Python语言的IDE，其内置一整套可以帮助用户在使用Python语言开发时提高其效率的工具。本文档意在为用户提供通过PyCharm开发使用VeighNa的方案以供参考。
+PyCharm是由JetBrains公司推出针对Python语言的IDE，其内置一整套可以帮助用户在使用Python语言开发时提高其效率的工具。本文档意在为用户提供通过PyCharm开发使用AI智能量化软件的方案以供参考。
 
 本文档中的内容基于Windows系统编写，但对于Linux/Mac系统大部分也都适用。
 
-VeighNa适用的Windows系统包括：
+AI智能量化软件适用的Windows系统包括：
 
 - Windows 10/11
 - Windows Server 2019/2022
 
 > 其他版本的Windows系统安装时可能遇到各种依赖库问题，不推荐使用。
 
-在Windows系统上使用VeighNa，推荐安装官方推出的【VeighNa Studio】Python发行版，**尤其是初次接触Python开发的新手用户**。
+在Windows系统上使用AI智能量化软件，推荐安装官方推出的【AI智能量化软件 Studio】Python发行版，**尤其是初次接触Python开发的新手用户**。
 
 
 ## PyCharm安装
@@ -35,7 +35,7 @@ VeighNa适用的Windows系统包括：
 如果前面勾选了Create Desktop Shortcut选项来创建桌面快捷方式的话，此时桌面上会出现PyCharm的图标，双击图标即可运行PyCharm。
 
 
-## VeighNa开发
+## AI智能量化软件开发
 
 ### 创建项目
 
@@ -47,7 +47,7 @@ VeighNa适用的Windows系统包括：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/7.png)
 
-点击右侧Add Interpreter下拉框中的【Add Local Interpreter】，在弹出的对话框中点击左侧的【System Interpreter】标签，并在右侧出现的下拉框中选择VeighNa Studio自带Python解释器所在的路径：
+点击右侧Add Interpreter下拉框中的【Add Local Interpreter】，在弹出的对话框中点击左侧的【System Interpreter】标签，并在右侧出现的下拉框中选择AI智能量化软件 Studio自带Python解释器所在的路径：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/8.png)
 
@@ -63,7 +63,7 @@ VeighNa适用的Windows系统包括：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/11.png)
 
-点击site_packages文件夹，往下滚动就能扎到VeighNa Studio中vnpy核心框架包以及vnpy_前缀的插件模块包。此时可以通过点击对应图标来查看每个包中的文件源码，如下图所示：
+点击site_packages文件夹，往下滚动就能扎到AI智能量化软件 Studio中vnpy核心框架包以及vnpy_前缀的插件模块包。此时可以通过点击对应图标来查看每个包中的文件源码，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/13.png)
 
@@ -77,13 +77,13 @@ VeighNa适用的Windows系统包括：
 
 点击窗口右下角的【Python 3.10】按钮，会弹出【Settings】项目配置窗口，可以看到当前解释器环境下安装的包名称、本地版本号、最新版本号。带有升级符号（向上箭头）的包，说明当前版本不是最新版，点击升级符号即可自动升级。
 
-> 请注意：由于VeighNa对于部分依赖库有严格的版本要求，不建议用户手动升级安装的包到最新版，可能会出现版本冲突。
+> 请注意：由于AI智能量化软件对于部分依赖库有严格的版本要求，不建议用户手动升级安装的包到最新版，可能会出现版本冲突。
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/49.png)
 
 ### 运行程序
 
-从Github代码仓库下载[VeighNa Trader启动脚本文件run.py](https://github.com/vnpy/vnpy/blob/master/examples/veighna_trader/run.py)，并将其放置于trader文件夹下，即可在窗口左侧的项目导航栏中看见run.py文件：
+从Github代码仓库下载[AI智能量化软件 Trader启动脚本文件run.py](https://github.com/vnpy/vnpy/blob/master/examples/veighna_trader/run.py)，并将其放置于trader文件夹下，即可在窗口左侧的项目导航栏中看见run.py文件：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/16.png)
 
@@ -101,7 +101,7 @@ VeighNa适用的Windows系统包括：
 
 <span id="jump">
 
-与此同时，VeighNa Trader的主窗口也会自动弹出显示：
+与此同时，AI智能量化软件 Trader的主窗口也会自动弹出显示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/pycharm/20.png) 
 
@@ -114,7 +114,7 @@ VeighNa适用的Windows系统包括：
 
 ### 断点调试
 
-PyCharm的断点调试功能十分强大，这里使用一个VeighNa的策略历史回测脚本来演示。
+PyCharm的断点调试功能十分强大，这里使用一个AI智能量化软件的策略历史回测脚本来演示。
 
 在左侧项目导航栏中点击鼠标右键，选择【New】-【File】, 在弹出的对话框中创建backtest.py：
 

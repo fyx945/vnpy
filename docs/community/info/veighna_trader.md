@@ -1,30 +1,30 @@
-# VeighNa Trader
+# AI智能量化软件
 
 ## 启动程序
 
 ### 图形模式
 
-启动登录VeighNa Station后，用户可通过点击【交易】按钮，勾选所需的交易接口和应用模块，点击【启动】按钮进入VeighNa Trader，如下图所示：
+启动登录AI量化软件后，用户可通过点击【交易】按钮，勾选所需的交易接口和应用模块，点击【启动】按钮进入AI智能量化软件，如下图所示：
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/quick_start/22.png)
 
 ### 脚本模式
 
-在文件夹examples/veighna_trader中找到run.py文件(不是veighna_studio下的，需要在github上下载源码）。运行run.py即可进入VeighNa Trader。
+在文件夹examples/veighna_trader中找到run.py文件(不是veighna_studio下的，需要在github上下载源码）。运行run.py即可进入AI智能量化软件。
 
-- 以Win10系统为例，用户可在run.py所在文件夹内按住【Shift】，同时点击鼠标右键，选择【在此处打开 powershell 窗口】，在弹出窗口中，输入如下命令，即可启动VeighNa Trader。
+- 以Win10系统为例，用户可在run.py所在文件夹内按住【Shift】，同时点击鼠标右键，选择【在此处打开 powershell 窗口】，在弹出窗口中，输入如下命令，即可启动AI智能量化软件。
    ```bash
         python run.py
    ```
    ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/quick_start/3.png)
 
-启动成功的VeighNa Trader如下图所示：
+启动成功的AI智能量化软件如下图所示：
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/quick_start/23.png)
 
 ## 连接接口
 
 ### SimNow仿真
 
-以使用SimNow仿真交易账号登录**CTP**接口为例，在VeighNa Trader上的菜单栏中点击【系统】->【连接CTP】，会弹出账号配置窗口，如下图所示：
+以使用SimNow仿真交易账号登录**CTP**接口为例，在AI智能量化软件上的菜单栏中点击【系统】->【连接CTP】，会弹出账号配置窗口，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/gateway/1.png)
 
@@ -39,9 +39,9 @@
 
 请注意：
  - 用户名需填写InvestorID（6位纯数字），而不是Simnow网站注册时的账号（手机号）。此外，Simnow注册的账号需要修改一次密码后才能登录。
- - 如果点击连接接口之后，没有在VeighNa Trader主界面【日志】组件看到任何输出，可以用telnet工具测试一下交易服务器/行情服务器的端口是否开启。
+ - 如果点击连接接口之后，没有在AI智能量化软件主界面【日志】组件看到任何输出，可以用telnet工具测试一下交易服务器/行情服务器的端口是否开启。
 
-连接成功以后，VeighNa Trader主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到账号信息，持仓信息，合约查询等相关信息。如下图所示：
+连接成功以后，AI智能量化软件主界面【日志】组件会立刻输出登录相关信息，同时用户也可以看到账号信息，持仓信息，合约查询等相关信息。如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/cta_strategy/1.png)
 
@@ -158,14 +158,14 @@
 
 ## 应用模块
 
-VeighNa官方提供了开箱即用的量化交易应用模块，在启动VeighNa Trader时勾选所需的功能模块，启动成功后在菜单栏中点击【功能】按钮，即可显示所勾选的功能模块，如下图所示：
+AI智能量化软件官方提供了开箱即用的量化交易应用模块，在启动AI智能量化软件时勾选所需的功能模块，启动成功后在菜单栏中点击【功能】按钮，即可显示所勾选的功能模块，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/quick_start/25.png)
 
 
 ## 全局配置
 
-点击VeighNa Trader菜单栏上的【配置】按钮弹出【全局配置】窗口，如下图所示：
+点击AI智能量化软件菜单栏上的【配置】按钮弹出【全局配置】窗口，如下图所示：
 
 ![](https://vnpy-doc.oss-cn-shanghai.aliyuncs.com/quick_start/20.png)
 
@@ -173,23 +173,23 @@ VeighNa官方提供了开箱即用的量化交易应用模块，在启动VeighNa
 
 font.family和font.size参数用于配置GUI界面，各参数含义如下所示：
 
-- font.family：设置VeighNa Trader图形界面的字体类型，除了默认的Arial字体，也支持Courier New和System字体；
+- font.family：设置AI智能量化软件图形界面的字体类型，除了默认的Arial字体，也支持Courier New和System字体；
 
-- font.size：设置VeighNa Trader图形界面的字体大小，用户可以根据自己显示器的实际分辨率对字体大小进行修改。
+- font.size：设置AI智能量化软件图形界面的字体大小，用户可以根据自己显示器的实际分辨率对字体大小进行修改。
 
 ### 日志输出
 
 log.active, log.level, log.console和log.file用于对日志输出进行配置，各参数含义如下所示：
 
-- log.active：控制是否启动LogEngine，默认为True。如果该项修改为False，则后续几项参数都将失效，同时VeighNa Trader运行时不再输出日志或生成日志文件（可以降低部分系统延时）；
+- log.active：控制是否启动LogEngine，默认为True。如果该项修改为False，则后续几项参数都将失效，同时AI智能量化软件运行时不再输出日志或生成日志文件（可以降低部分系统延时）；
 
 - log.level：控制日志输出的级别，日志可以从轻到严重分成DEBUG、INFO、WARNING、ERROR、CRITICAL五个级别，分别对应10、20、30、40、50的整数值。如果日志等级低于该项设置值，将会被忽略。如果想要记录更详细的系统运行信息，建议将该项整数值调低；
 
-- log.console：console指的是终端，如Windows系统上的cmd和Powershell，以及Linux上的Terminal。当设置为True时，通过终端运行脚本（需要注册日志事件监听）来启动VeighNa Trader，日志信息会输出在终端中；如果通过VeighNa Station来直接启动VeighNa Trader，则无console输出；
+- log.console：console指的是终端，如Windows系统上的cmd和Powershell，以及Linux上的Terminal。当设置为True时，通过终端运行脚本（需要注册日志事件监听）来启动AI智能量化软件，日志信息会输出在终端中；如果通过AI量化软件来直接启动AI智能量化软件，则无console输出；
 
 - log.file：该参数用于控制是否要将日志输出到文件中，建议设置为True，否则无法记录生成的日志。
 
-VeighNa Trader的日志文件，默认位于运行时目录的.vntrader\log目录下，完整路径为：
+AI智能量化软件的日志文件，默认位于运行时目录的.vntrader\log目录下，完整路径为：
 ```
 C:\users\administrator\.vntrader\log
 ```
@@ -241,4 +241,4 @@ C:\users\administrator\.vntrader\log
 
 ### 数据库
 
-以database为前缀的参数用于配置数据库服务。目前，VeighNa支持SQLite、MySQL、PostgreSQL、MongoDB、InfluxDB、DolphinDB、Arctic和LevelDB八种数据库。具体配置方法详见项目文档的数据库配置部分。
+以database为前缀的参数用于配置数据库服务。目前，AI智能量化软件支持SQLite、MySQL、PostgreSQL、MongoDB、InfluxDB、DolphinDB、Arctic和LevelDB八种数据库。具体配置方法详见项目文档的数据库配置部分。

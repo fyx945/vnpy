@@ -1,0 +1,71 @@
+name: Build Windows EXE
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  releases: write
+
+jobs:
+  build-exe:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install PyInstaller
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+
+    - name: Install PySide6
+      run: pip install PySide6
+
+    - name: Install vnpy core and dependencies
+      run: |
+        pip install vnpy
+        pip install vnpy_ctp vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
+
+    - name: Build EXE with PyInstaller
+      run: |
+        pyinstaller app.spec --clean --noconfirm
+
+    - name: Create ZIP archive
+      shell: pwsh
+      run: |
+        Compress-Archive -Path "dist\AI量化软件" -DestinationPath "dist\AI量化软件-v${{ github.run_number }}.zip" -Force
+
+    - name: Upload EXE artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AI量化软件-EXE
+        path: dist/*.zip
+        retention-days: 30
+
+    - name: Create Release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/*.zip
+        body: |
+          ## AI量化软件 Windows EXE
+
+          自动构建版本 #{{ github.run_number }}
+
+          ### 包含模块
+          - vnpy 核心
+          - CTP 交易接口
+          - CTA 策略模块
+          - 回测模块
+          - 数据管理模块
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

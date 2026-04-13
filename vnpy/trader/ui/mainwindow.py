@@ -48,7 +48,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.main_engine: MainEngine = main_engine
         self.event_engine: EventEngine = event_engine
 
-        self.window_title: str = _("VeighNa Trader 社区版 - {}   [{}]").format(vnpy.__version__, TRADER_DIR)
+        self.window_title: str = _("AI智能量化软件 - {}   [{}]").format(vnpy.__version__, TRADER_DIR)
 
         self.widgets: dict[str, QtWidgets.QWidget] = {}
         self.monitors: dict[str, BaseMonitor] = {}
@@ -319,12 +319,12 @@ class MainWindow(QtWidgets.QMainWindow):
         """
         Sending a test email.
         """
-        self.main_engine.send_email("VeighNa Trader", "testing", None)
+        self.main_engine.send_email("A I智能量化软件", "testing", None)
 
     def open_forum(self) -> None:
         """
         """
-        webbrowser.open("https://www.vnpy.com/forum/")
+        webbrowser.open("https://it.zhengyee.com/forum/")
 
     def edit_global_setting(self) -> None:
         """

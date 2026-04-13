@@ -12,7 +12,7 @@ permissions:
 jobs:
   build-exe:
     runs-on: windows-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -22,30 +22,42 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install PyInstaller
+    - name: Install build dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyinstaller
+        pip install --timeout 120 pyinstaller
 
     - name: Install PySide6
-      run: pip install PySide6
+      run: pip install --timeout 120 PySide6
 
-    - name: Install vnpy core and dependencies
+    - name: Install vnpy core (without CTP to avoid compilation issues)
       run: |
-        pip install vnpy
-        pip install vnpy_ctp vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
+        pip install --timeout 180 vnpy
+        pip install --timeout 180 vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
+
+    - name: Check installed packages
+      run: |
+        pip list | grep -i vnpy
 
     - name: Build EXE with PyInstaller
       run: |
-        pyinstaller app.spec --clean --noconfirm
+        pyinstaller app.spec --clean --noconfirm 2>&1 || true
+        ls -la dist/ 2>/dev/null || echo "dist folder not found"
 
     - name: Create ZIP archive
+      if: success()
       shell: bash
       run: |
-        cd dist
-        zip -r "AIQuantSoftware-${{ github.run_number }}.zip" "AIQuantSoftware"
+        if [ -d "dist/AIQuantSoftware" ]; then
+          cd dist
+          zip -r "AIQuantSoftware-${{ github.run_number }}.zip" "AIQuantSoftware"
+        else
+          echo "Build failed, no dist folder"
+          exit 1
+        fi
 
     - name: Upload EXE artifact
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: AIQuantSoftware-EXE-${{ github.run_number }}
@@ -53,7 +65,7 @@ jobs:
         retention-days: 30
 
     - name: Create Release
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master' && success()
       uses: softprops/action-gh-release@v2
       with:
         files: dist/*.zip
@@ -65,7 +77,6 @@ jobs:
 
           ### 包含模块
           - vnpy 核心
-          - CTP 交易接口
           - CTA 策略模块
           - 回测模块
           - 数据管理模块

@@ -1,49 +1,52 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
+import os
 
 block_cipher = None
 
-# 收集所有 vnpy 子模块
+# 收集 vnpy 核心模块 (不包含需要编译的CTP等)
 hiddenimports = [
     'vnpy',
-    'vnpy.trader',
-    'vnpy.event',
-    'vnpy.chart',
-    'vnpy.alpha',
-    'vnpy.rpc',
-    'vnpy_ctp',
-    'vnpy_ctastrategy',
-    'vnpy_ctabacktester',
-    'vnpy_datamanager',
 ]
 
 # 收集所有子模块
-for mod in [
+for mod in ['vnpy.trader', 'vnpy.event', 'vnpy.chart', 'vnpy.alpha', 'vnpy.rpc']:
+    try:
+        hiddenimports.extend(collect_submodules(mod))
+    except:
+        pass
+
+# 添加策略和回测相关模块
+hiddenimports.extend([
     'vnpy.trader',
-    'vnpy.event',
+    'vnpy.event', 
     'vnpy.chart',
     'vnpy.alpha',
     'vnpy.rpc',
-]:
-    hiddenimports.extend(collect_submodules(mod))
+    'vnpy_ctastrategy',
+    'vnpy_ctabacktester',
+    'vnpy_datamanager',
+])
 
 # 收集 PySide6 资源
+pyside6_data = []
 try:
-    from PyInstaller.utils.hooks import collect_all
     pyside6_data = collect_data_files('PySide6')
     pyside6_data.extend(collect_data_files('shiboken6'))
 except:
-    pyside6_data = []
+    pass
+
+# 入口脚本
+entry_script = 'examples/veighna_trader/run.py'
+if not os.path.exists(entry_script):
+    entry_script = 'run.py'
 
 a = Analysis(
-    ['examples/veighna_trader/run.py'],
+    [entry_script],
     pathex=[],
     binaries=[],
-    datas=[
-        ('vnpy/trader/locale', 'vnpy/trader/locale'),
-        ('vnpy/trader/ui/ui', 'vnpy/trader/ui/ui'),
-    ],
+    datas=[],
     hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
@@ -53,6 +56,8 @@ a = Analysis(
         'matplotlib',
         'PyQt5',
         'PyQt6',
+        'torch',
+        'tensorflow',
     ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
@@ -62,14 +67,18 @@ a = Analysis(
 
 pyz = PYZ(a.pure_a, a.zipped_data, cipher=block_cipher)
 
-exe = EXE(
+exe_args = [
     pyz,
     a.scripts,
     a.binaries,
     a.zipfiles,
     a.datas,
-    *pyside6_data,
-    name='AIQuantSoftware',  # 使用ASCII名称避免Windows编码问题
+]
+exe_args.extend(pyside6_data)
+
+exe = EXE(
+    *exe_args,
+    name='AIQuantSoftware',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

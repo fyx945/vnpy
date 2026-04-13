@@ -33,12 +33,18 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller app.spec --clean --noconfirm
+        dir dist
 
     - name: Create ZIP
       if: success()
+      shell: pwsh
       run: |
-        cd dist
-        powershell -Command "Compress-Archive -Path 'AIQuantSoftware' -DestinationPath 'AIQuantSoftware.zip' -Force"
+        $items = Get-ChildItem -Path dist -Directory
+        if ($items) {
+            $folder = $items[0].Name
+            Compress-Archive -Path "dist/$folder" -DestinationPath "dist/${folder}.zip" -Force
+            ls dist/*.zip
+        }
 
     - name: Upload artifact
       if: success()

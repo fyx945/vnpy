@@ -1,14 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-from PyInstaller.utils.hooks import collect_data_files, collect_submodules
+from PyInstaller.utils.hooks import collect_submodules
 import os
 
 block_cipher = None
 
-# 收集 vnpy 核心模块 (不包含需要编译的CTP等)
-hiddenimports = [
-    'vnpy',
-]
+# 收集 vnpy 核心模块
+hiddenimports = ['vnpy']
 
 # 收集所有子模块
 for mod in ['vnpy.trader', 'vnpy.event', 'vnpy.chart', 'vnpy.alpha', 'vnpy.rpc']:
@@ -17,10 +15,9 @@ for mod in ['vnpy.trader', 'vnpy.event', 'vnpy.chart', 'vnpy.alpha', 'vnpy.rpc']
     except:
         pass
 
-# 添加策略和回测相关模块
 hiddenimports.extend([
     'vnpy.trader',
-    'vnpy.event', 
+    'vnpy.event',
     'vnpy.chart',
     'vnpy.alpha',
     'vnpy.rpc',
@@ -28,8 +25,6 @@ hiddenimports.extend([
     'vnpy_ctabacktester',
     'vnpy_datamanager',
 ])
-
-# PySide6 资源由 PyInstaller hooks 自动处理
 
 # 入口脚本
 entry_script = 'examples/veighna_trader/run.py'
@@ -61,16 +56,12 @@ a = Analysis(
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
-exe_args = [
+exe = EXE(
     pyz,
     a.scripts,
     a.binaries,
     a.zipfiles,
     a.datas,
-]
-
-exe = EXE(
-    *exe_args,
     name='AIQuantSoftware',
     debug=False,
     bootloader_ignore_signals=False,

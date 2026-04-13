@@ -31,10 +31,9 @@ jobs:
         pip install vnpy vnpy_ctastrategy vnpy_ctabacktester vnpy_datamanager
 
     - name: Build EXE
-      working-directory: examples/veighna_trader
       run: |
-        pyinstaller app.spec --clean --noconfirm
-        dir dist
+        pyinstaller examples/veighna_trader/app.spec --clean --noconfirm
+        dir examples/veighna_trader/dist
 
     - name: Create ZIP
       if: success()

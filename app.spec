@@ -32,8 +32,11 @@ hiddenimports.extend([
 # 收集 PySide6 资源
 pyside6_data = []
 try:
-    pyside6_data = collect_data_files('PySide6')
-    pyside6_data.extend(collect_data_files('shiboken6'))
+    # PyInstaller 6.x 返回 (src_path, dst_path) 2元组，需要转换为 (dest_name, src_name, 'DATA') 3元组
+    for src, dst in collect_data_files('PySide6'):
+        pyside6_data.append((dst, src, 'DATA'))
+    for src, dst in collect_data_files('shiboken6'):
+        pyside6_data.append((dst, src, 'DATA'))
 except:
     pass
 
